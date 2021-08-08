@@ -1,15 +1,15 @@
 const users = [];
 
 const addUser = ({ id, username, room }) => {
-	//Clean data
-	username = username.trim().toLowerCase();
-	room = room.trim().toLowerCase();
-
 	//Validate data
 	if (!username || !room)
 		return {
 			error: "Username and room is required!"
 		};
+
+	//Clean data
+	username = username.trim().toLowerCase();
+	room = room.trim().toLowerCase();
 
 	//Check for existing user
 	const existingUser = users.find(
